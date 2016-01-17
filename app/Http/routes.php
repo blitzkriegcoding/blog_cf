@@ -22,3 +22,9 @@ Route::group(['prefix' => 'articles'], function()
 		Route::get('view/{id?}',['uses' => 'TestController@view', 'as' => 'articleView']);
 	});
 
+Route::group(['prefix' => 'admin'], function(){
+	
+	Route::resource('users','UserController');
+
+});
+

@@ -10,9 +10,20 @@
 </head>
 <body>
 	@include('admin.template.partials.nav')
-	<section>
-		@yield('content')	
-	</section>
+	<div class="container">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">@yield('title')</h3>
+			  </div>
+			  <div class="panel-body">
+			    @yield('content')
+			  </div>
+			</div>			
+
+
+		</div>
+	</div>
 	<script src="{{ asset('plugins/jquery/js/jquery-2.2.0.js') }}" type="text/javascript" charset="utf-8" ></script>
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}" type="text/javascript" charset="utf-8" ></script>
 </body>
