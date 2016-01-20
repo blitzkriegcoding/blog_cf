@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         Barryvdh\Debugbar\ServiceProvider::class,
+        'Laracasts\Flash\FlashServiceProvider'
 
 
     ],
@@ -206,6 +207,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Flash' => 'Laracasts\Flash\Flash'
+
 
 
     ],

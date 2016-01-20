@@ -9,14 +9,18 @@
 	<link rel="stylesheet" href=" {{ asset('plugins/bootstrap/css/bootstrap.css') }} ">
 </head>
 <body>
-	@include('admin.template.partials.nav')
+	<div class="container col-md-10 col-md-offset-1">
+		@include('admin.template.partials.nav')	
+	</div>
+	
 	<div class="container">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 			    <h3 class="panel-title">@yield('title')</h3>
 			  </div>
 			  <div class="panel-body">
+			  	@include('flash::message')
 			    @yield('content')
 			  </div>
 			</div>			
