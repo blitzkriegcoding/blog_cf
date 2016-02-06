@@ -39,6 +39,9 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    protected $loginPath = '/admin';
+    protected $redirectPath = '/admin';
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -62,4 +65,9 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    protected function getLogin()
+        {
+            return view('admin.auth.login');
+        }
 }
