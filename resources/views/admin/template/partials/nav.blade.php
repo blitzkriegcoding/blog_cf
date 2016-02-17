@@ -15,11 +15,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       @if(Auth::user())
         <ul class="nav navbar-nav">
-          <li><a href="{{ route('admin.users.index') }}">Inicio</a></li>
+          <li><a href="{{ route('admin.index') }}">Inicio</a></li>
           <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
           <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
           <li><a href="{{ route('admin.articles.index') }}">Artículos</a></li>
-          <li><a href="{{ route('admin.users.index') }}">Imágenes</a></li>
+          <li><a href="{{ route('admin.images.index') }}">Imágenes</a></li>
           <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
 
 

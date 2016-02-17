@@ -37,6 +37,11 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public function isSuperAdmin()
+        {
+            return 1 === (int) $this->id;
+        }
+
     public function articles()
         {
             return $this->hasMany('App\Article');

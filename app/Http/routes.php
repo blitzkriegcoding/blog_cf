@@ -49,37 +49,41 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 										'as' => 'admin.articles.destroy'
 									]);
 
-
+	Route::get('images', 
+			[
+				'uses' => 'ImagesController@index', 
+				'as' => 'admin.images.index'
+			]);
 
 	Route::get('/',['as' => 'admin.index', function()
 		 { 
 		 	return view('welcome'); 
 		}]);
 
-});
+	});
 
-Route::get('admin/auth/login', 
-		[
-			'uses' 	=> 	'Auth\AuthController@getLogin',
-			'as'	=>	'admin.auth.login'
-		]
+	Route::get('admin/auth/login', 
+			[
+				'uses' 	=> 	'Auth\AuthController@getLogin',
+				'as'	=>	'admin.auth.login'
+			]
 
-	);
-Route::post('admin/auth/login', 
-		[
-			'uses' 	=> 	'Auth\AuthController@postLogin',
-			'as'	=>	'admin.auth.login'
-		]
+		);
+	Route::post('admin/auth/login', 
+			[
+				'uses' 	=> 	'Auth\AuthController@postLogin',
+				'as'	=>	'admin.auth.login'
+			]
 
-	);
+		);
 
-Route::get('admin/auth/logout', 
-		[
-			'uses' 	=> 	'Auth\AuthController@getLogout',
-			'as'	=>	'admin.auth.logout'
-		]
+	Route::get('admin/auth/logout', 
+			[
+				'uses' 	=> 	'Auth\AuthController@getLogout',
+				'as'	=>	'admin.auth.logout'
+			]
 
-	);
+		);
 
 
 

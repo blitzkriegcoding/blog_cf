@@ -100,12 +100,22 @@ class ArticlesController extends Controller
 
     public function update(Request $request, $id)
         {
-            //
+            $article = Article::find($id);
+            $article->fill($request->all());
+            $article->save();
+
+            $article->tags()->sync($request->tags);
+            Flash::warning('Fue editado exitosamente el articulo '.$article->title);
+            return redirect()->route('admin.articles.index');
         }
 
 
     public function destroy($id)
         {
-            //
+            $article = Article::find($id);
+            $article->delete();
+
+            Flash::error('Se ha borrado el artículo '.$article->title.' exitosamente!');
+            return redirect()->route('admin.articles.index');
         }
 }
